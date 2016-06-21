@@ -1,22 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProcessManager;
+using System.IO;
+// for Path
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+// for DllImportAttribute
 
 namespace ChocoMon
 {
+
     static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Framework for restricting app to a single instance and for running as a tray app.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Proc existingInstance = new Proc(Path.GetFileNameWithoutExtension(Application.ExecutablePath));
+            if (!existingInstance.isRunning()) // just me, so run!
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new CustomApplicationContext());
+            }
+            else // switch to the first instance and exit
+            {
+                existingInstance.activate();
+            }
         }
     }
 }

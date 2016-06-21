@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChocoMon", "ChocoMon\ChocoMon.csproj", "{D1AF3ABB-1650-42F1-A8BD-04D1FADA76BF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{02B4DA07-35FA-44A7-AE8D-04DA0C815E64} = {02B4DA07-35FA-44A7-AE8D-04DA0C815E64}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessManager", "ProcessManager\ProcessManager.csproj", "{02B4DA07-35FA-44A7-AE8D-04DA0C815E64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{D1AF3ABB-1650-42F1-A8BD-04D1FADA76BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1AF3ABB-1650-42F1-A8BD-04D1FADA76BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1AF3ABB-1650-42F1-A8BD-04D1FADA76BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02B4DA07-35FA-44A7-AE8D-04DA0C815E64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02B4DA07-35FA-44A7-AE8D-04DA0C815E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02B4DA07-35FA-44A7-AE8D-04DA0C815E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02B4DA07-35FA-44A7-AE8D-04DA0C815E64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
