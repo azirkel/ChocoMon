@@ -18,8 +18,11 @@ namespace ChocoMon
         [STAThread]
         static void Main()
         {
+            Debug.WriteLine("Hello!");
+            Console.WriteLine("Hello!");
             Proc existingInstance = new Proc(Path.GetFileNameWithoutExtension(Application.ExecutablePath));
-            if (!existingInstance.isRunning()) // just me, so run!
+            //why is this reverse logic?
+            if (existingInstance.isRunning()) // just me, so run!
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
